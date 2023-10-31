@@ -23,3 +23,8 @@ export const init = (httpServer) => {
 
   });
 };
+
+export const newMessageFromAPI = (newMessage) => {
+  conversation.push(newMessage);
+  io.emit('update-conversation', conversation);
+}
